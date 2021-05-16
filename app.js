@@ -9,7 +9,7 @@ const mongodb = require('mongodb');
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false
-}));
+}));  
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -20,7 +20,7 @@ const shopRoute = require('./api/routes/shop');
 const homeRoute = require('./api/routes/home');
 
 
-app.use('/cart', cartRoute);
+app.use('/cart', cartRoute);     
 app.use('/single-product', singleProduct);
 app.use('/shop', shopRoute);
 app.use('/', homeRoute);
