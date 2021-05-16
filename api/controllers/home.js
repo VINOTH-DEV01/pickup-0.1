@@ -71,13 +71,7 @@ exports.postData = (req, res, next) => {
 
 
 exports.updateProduct = (req, res, next) => {
-    const product = new ProductsList({
-        _id: req.body.id,
-        name: req.body.name,
-        price: req.body.price
-    });
-    console.log("product", product);
-    product.updateOne(
+    ProductsList.updateOne(
         {
         _id: req.body.id
         }, 

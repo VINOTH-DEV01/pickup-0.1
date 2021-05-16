@@ -41,28 +41,31 @@ function Hellow() {
         });
     }
     const updateForm = (e) => {
-        axios.put('updateProduct/',{
-            id:e.target.id,
+        axios.put('updateProduct/', {
+            id: e.target.id,
             name: product,
             price: pwd
         }).then((res) => {
             console.log(res);
+            setComponentTrigger(true);
+            setProduct('');
+            setPwd('');
         });
     }
     const deleteData = (e) => {
+        console.log(e);
         axios.delete(`deleteProduct/${e.target.id}`).then((res) => {
-            alert("Your product is deleted successfully! "+ e.target.id)
+            alert("Your product is deleted successfully! " + e.target.id)
             setComponentTrigger(true)
-        }).catch(err=> {
-           console.log("Error " + err );
+        }).catch(err => {
+            console.log("Error " + err);
         });
     }
-    // const updateForm = () => {
+    const updateMe = (e) => {
 
 
+    }
 
-    // }
-    
     return (
         <div className="hellocomponenet">
             <div className="addData">
@@ -73,25 +76,25 @@ function Hellow() {
 
             </div>
             <div className="listofproducts">
-            {data.map((item, index) => {
-                return (
-                   
+                {data.map((item, index) => {
+                    return (
+
                         <div className="lp">
                             <p>
-                                <br /> <b>Name:</b> {item.name + " "} <br /> <b>Price: </b>{item.price}
+                                <br /> <b>Product Name:</b> {item.name + " "} <br /> <b>Price: </b>{item.price}
                                 <br />
                                 <button id={item._id} onClick={deleteData} > Delete  </button>  &nbsp;
-                            {/* <button onClick={updateForm}Form > Update details  </button> */}
-                            <div  className="updateForm">
-                                        <b>Name:</b><input type="text" value={product} onChange={productName} id="name" placeholder="name" /> <br />
-                                        <b>Price:</b><input type="text" value={pwd} onChange={pwdName} id="price" placeholder="price" /> <br />
-                                        <button id={item._id} onClick={updateForm}Form > Update details  </button>
-                            </div>
+                            <button onClick={updateMe} id={item._id} > Update click here!  </button>
+                                <div className="updateForm">
+                                    <b>Name:</b><input type="text" value={product} onChange={productName} id="name" placeholder="name" /> <br />
+                                    <b>Price:</b><input type="text" value={pwd} onChange={pwdName} id="price" placeholder="price" /> <br />
+                                    <button id={item._id} onClick={updateForm} Form > Update details  </button>
+                                </div>
                             </p>
                         </div>
-                );
-            })}
-                                </div>
+                    );
+                })}
+            </div>
 
 
         </div>
