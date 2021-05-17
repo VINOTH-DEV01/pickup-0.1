@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect, } from 'react';
 import axios from 'axios';
+
+
 import './LandingPage.css';
 
 
@@ -12,7 +14,9 @@ function LandingPage() {
             console.log(res);
             setData(res.data.productList);
         });
-    }, []);
+    });
+
+
     return (
         <React.Fragment>
             <div class="lp-wrapper">
