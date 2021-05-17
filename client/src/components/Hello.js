@@ -51,7 +51,7 @@ function Hellow() {
             setProduct('');
             setPwd('');
         });
-    }
+    }     
     const deleteData = (e) => {
         console.log(e);
         axios.delete(`deleteProduct/${e.target.id}`).then((res) => {
