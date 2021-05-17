@@ -1,10 +1,10 @@
 import './App.css';
-import Hellow from  '../src/components/Hello';
+import LandingPage from  './pages/LandingPage/LandingPage';
 
 function App() {
   return (
     <div className="App">
-      <Hellow />
+      <LandingPage />
     </div>
   );
 }
