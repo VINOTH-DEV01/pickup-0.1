@@ -44,7 +44,7 @@ function Hellow() {
         axios.put('updateProduct/', {
             id: e.target.id,
             name: product,
-            price: pwd
+            price: pwd   
         }).then((res) => {
             console.log(res);
             setComponentTrigger(true);
