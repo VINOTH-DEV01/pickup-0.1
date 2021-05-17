@@ -10,7 +10,7 @@ mongoose.connect("mongodb+srv://shopapi:shopapi@cluster0.genkf.mongodb.net/Produ
 // Open the connection to the server
 
 
-router.get('/user', homeController.getHome);
+router.get('/', homeController.getHome);
 router.get('/getallproducts', homeController.getProducts);
 router.get('/products',homeController.getHome);
 router.post('/addnewproduct', homeController.postData);
