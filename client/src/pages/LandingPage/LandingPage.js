@@ -1,12 +1,26 @@
 import React from 'react';
+import { useState, useEffect, } from 'react';
+import axios from 'axios';
+
+
 import './LandingPage.css';
 
 
 function LandingPage() {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        axios.get('/getallproducts').then((res) => {
+            console.log(res);
+            setData(res.data.productList);
+        });
+    });
+
+
     return (
         <React.Fragment>
             <div class="lp-wrapper">
-                
                 <nav class="lp-nav">
                     <a class="navbar-brand" href="#">
                         <span class="sr-only">Pickup</span>
