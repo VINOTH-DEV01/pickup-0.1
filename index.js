@@ -8,14 +8,14 @@ if(process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
-// const port = process.env.port || 5000;  
-// const server = http.createServer(app);
-// server.listen(port);
+const port = process.env.port || 5000;  
+const server = http.createServer(app);
+server.listen(port);
 
      
 // server side configuration // 
-var port = process.env.PORT || 3000;
-const server = http.createServer(app);
-server.listen(port, "0.0.0.0", function() {
-console.log("Listening on Port 3000");
-});    
+// var port = process.env.PORT || 3000;
+// const server = http.createServer(app);
+// server.listen(port, "0.0.0.0", function() {
+// console.log("Listening on Port 3000");
+// });    
